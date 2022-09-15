@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hospital_polilist_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Poli</field>
+        <field name="model">hospital.poli</field>
+        <field name="arch" type="xml">
+            <tree string="Data Poli">
+                <field name="name" />
+                <field name="jml_dokter" />
+                <field name="listDokter" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="hospital_polilist_view_form" model="ir.ui.view">
+        <field name="name">hospital.poli.view.form</field>
+        <field name="model">hospital.poli</field>
+        <field name="arch" type="xml">
+            <form string="Detail Poli">
+                <sheet>
+                    <group name='Detail Poli' string='Detail Poli'>
+                        <field name="name" />
+                        <field name="officer_ids" />
+                        <field name="jml_dokter" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hospital_polilist_action" model="ir.actions.act_window">
+        <field name="name">List Poli</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.poli</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="hospital_poli_list_menu"
+        name="List Poli"
+        action="hospital_polilist_action"
+        parent="hospital_poli_menu"
+        sequence="20"/>
+</odoo>

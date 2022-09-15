@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hospital_pasien,access.hospital.pasien,model_hospital_pasien,base.group_user,1,1,1,1
+access_hospital_dokter,access.hospital.dokter,model_hospital_dokter,base.group_user,1,1,1,1
+access_hospital_poli,access.hospital.poli,model_hospital_poli,base.group_user,1,1,1,1
+access_hospital_registpoli,access.hospital.registpoli,model_hospital_registpoli,base.group_user,1,1,1,1
+access_hospital_ruangrawatinap,access.hospital.ruangrawatinap,model_hospital_ruangrawatinap,base.group_user,1,1,1,1
+access_hospital_registrawatinap,access.hospital.registrawatinap,model_hospital_registrawatinap,base.group_user,1,1,1,1

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hopsital_dokter_view_tree" model="ir.ui.view">
+        <field name="name">hopsital.dokter.view.tree</field>
+        <field name="model">hospital.dokter</field>
+        <field name="arch" type="xml">
+            <tree string="Data Tree Dokter">
+                <field name="dokterNo" />
+                <field name="name" />
+                <field name="age" />
+                <field name="address" />
+                <field name="postAssigned_id" />
+                <field name="scheduleDay" />
+                <field name="scheduleHour" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="hopsital_dokter_view_form" model="ir.ui.view">
+        <field name="name">hopsital.dokter.view.form</field>
+        <field name="model">hospital.dokter</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group name="biodata" string="Biodata Dokter">
+                        <field name="dokterNo" />
+                        <field name="name" />
+                        <field name="age" />
+                        <field name="address" />
+                    </group>
+                    <group name="poli" string="Poli">
+                        <field name="postAssigned_id" />
+                        <field name="scheduleDay" />
+                        <field name="scheduleHour" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hospital_dokter_action" model="ir.actions.act_window">
+        <field name="name">List Dokter</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.dokter</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

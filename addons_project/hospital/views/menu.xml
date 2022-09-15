@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <menuitem
+        id='hospital_menu_root'
+        name='Hospital'
+        sequence='10'/>
+    <menuitem
+        id='hospital_pasien_menu'
+        name='Pasien'
+        parent='hospital_menu_root'
+        action="hospital_pasien_action"
+        sequence='10'/>
+    <menuitem
+        id='hospital_dokter_menu'
+        name='Dokter'
+        parent='hospital_menu_root'
+        action="hospital_dokter_action"
+        sequence='20'/>
+    <menuitem
+        id='hospital_poli_menu'
+        name='Poli'
+        parent='hospital_menu_root'
+        sequence='30'/>
+    <menuitem
+        id="hospital_rawatinap_menu"
+        name="Rawat Inap"
+        parent="hospital_menu_root"
+        sequence="40"/>
+
+</odoo>

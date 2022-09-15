@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hospital_pasien_view_tree" model="ir.ui.view">
+        <field name="name">hospital.pasien.view.tree</field>
+        <field name="model">hospital.pasien</field>
+        <field name="arch" type="xml">
+            <tree string="Data Pasien">
+                <field name="pasienNo" />
+                <field name="name" />
+                <field name="age" />
+                <field name="dob" />
+                <field name="address" />
+                <field name="have_asuransi" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="hospital_pasien_view_form" model="ir.ui.view">
+        <field name="name">hospital.pasien.view.form</field>
+        <field name="model">hospital.pasien</field>
+        <field name="arch" type="xml">
+            <form string="Data Pasien">
+                <sheet>
+                    <group name='biodata' string='Biodata'>
+                        <field name="pasienNo" />
+                        <field name="name" />
+                        <field name="age" />
+                        <field name="dob" />
+                        <field name="address" />
+                    </group>
+
+                    <group name="asuransi" string="Asuransi">
+                        <field name="have_asuransi" />
+                        <field name="id_asuransi"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hospital_pasien_action" model="ir.actions.act_window">
+        <field name="name">Registrasi Pasien</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.pasien</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="report_faktur_registpoli" model="ir.actions.report">
+	    <field name="name">Print Faktur</field>
+	    <field name="model">hospital.registpoli</field>
+	    <field name="report_type">qweb-pdf</field>
+	    <field name="report_name">hospital.report_faktur_registPoli</field>
+	    <field name="report_file">hoospital.report_faktur_registPoli</field>
+	    <field name="binding_model_id" ref="model_hospital_registpoli"/>
+	    <field name="binding_type">report</field>
+    </record>
+
+	<record id="report_faktur_registrawatinap" model="ir.actions.report">
+	    <field name="name">Print Faktur</field>
+	    <field name="model">hospital.registrawatinap</field>
+	    <field name="report_type">qweb-pdf</field>
+	    <field name="report_name">hospital.report_faktur_registRawatInap</field>
+	    <field name="report_file">hoospital.report_faktur_registRawatInap</field>
+	    <field name="binding_model_id" ref="model_hospital_registrawatinap"/>
+	    <field name="binding_type">report</field>
+    </record>
+
+</odoo>

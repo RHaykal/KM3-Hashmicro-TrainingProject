@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hospital_registrawatinap_view_tree" model="ir.ui.view">
+        <field name="name">Registrasi Rawt Inap Tree</field>
+        <field name="model">hospital.registrawatinap</field>
+        <field name="arch" type="xml">
+            <tree string="Data Registrasi Poli">
+                <field name="name" />
+                <field name="patientName_id" />
+                <field name="roomNo_id" />
+                <field name="registDate" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="hospital_registrawatinap_view_form" model="ir.ui.view">
+        <field name="name">Registrasi Rawat Inap</field>
+        <field name="model">hospital.registrawatinap</field>
+        <field name="arch" type="xml">
+            <form string="Detail Poli">
+            <!-- TODO buat wizzard header untuk mengubah status pembayaran-->
+                <header>
+                    <button name="action_verificating" type="object" string="Verificating Payment" class="btn btn-primary" states="awaiting"/>
+                    <button name="action_confirmed" type="object" string="Confrimed Payment" class="btn btn-primary" states="verification"/>
+                    <button name="action_awaiting" type="object" string="Back to Waiting Payment" class="btn btn-danger" states="confirmed" confirm="Anda yakin ingin me reset status pembayaran ke Awaiting Payment?"/>
+                    <field name="state" widget="statusbar" statusbar_visible="awaiting,verification,confirmed" />
+                </header>
+                <sheet>
+                    <group name='Detail Record' string='Detail Record'>
+                        <field name="name" attrs="{'readonly': [('state', '!=', 'awaiting')]}"/>
+                        <field name="patientName_id" attrs="{'readonly': [('state', '!=', 'awaiting')]}"/>
+                        <field name="roomNo_id" attrs="{'readonly': [('state', '!=', 'awaiting')]}"/>
+                        <field name="doctorAssigned_id" attrs="{'readonly': [('state', '!=', 'awaiting')]}"/>
+                        <field name="registDate" attrs="{'readonly': [('state', '!=', 'awaiting')]}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hospital_registrawatinap_action" model="ir.actions.act_window">
+        <field name="name">Registrasi Rawat Inap</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.registrawatinap</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+    id="hospital_registrawatinap_menu"
+    name="Registrasi Rawat Inap"
+    action="hospital_registrawatinap_action"
+    parent="hospital_rawatinap_menu"
+    sequence="10"/>
+
+</odoo>

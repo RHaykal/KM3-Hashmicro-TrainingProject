@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="report_faktur_registPoli">
+    <t t-call="web.html_container">
+        <t t-call="web.internal_layout">
+            <div class="page">
+                <h2><b>FAKTUR RECORD REGISTRASI POLI</b></h2>
+                <t t-foreach="docs" t-as="d">
+                    <div class="row">
+                        <div class="col-4">No. Registrasi             :</div>
+                        <div class="col-8"><span t-field="d.name"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">Nama Pasien                  :</div>
+                        <div class="col-8"><span t-field="d.patientName_id"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">Poli                         :</div>
+                        <div class="col-8"><span t-field="d.poliName_id"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">Tanggal Registrasi              :</div>
+                        <div class="col-8"><span t-field="d.registDate"/></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">Status Pembayaran              :</div>
+                        <div class="col-8"><span t-field="d.state"/></div>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </t>
+</template>
+
+</odoo>
